@@ -21,10 +21,9 @@ if($_POST['appid'] && $_POST['appsecret']){
     //   $helper = $fb->getPageTabHelper();
 
     $permissions = ['email', 'user_likes']; // optional
-    $loginUrl = $helper->getLoginUrl('https://{your-website}/login-callback.php', $permissions);
+    $loginUrl = $helper->getLoginUrl('https://facebook-autocomment.herokuapp.com/login-callback.php?appid='.$_POST['appid'].'&appsecret='.$_POST['appsecret'], $permissions);
 
-    echo '<a href="' . $loginUrl . '">Log in with Facebook!</a>';
-    echo $_POST['appid'];
+    echo '<a href="' . htmlspecialchars($loginUrl) . '">Log in with Facebook!</a>';
 }
 
 ?>
