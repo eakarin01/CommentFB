@@ -68,5 +68,11 @@
 
     $_SESSION['fb_access_token'] = (string) $accessToken;
 
+    $fb->setDefaultAccessToken($_SESSION['fb_access_token']);
+
+    $data = $fb->get('/me');;
+
+    echo $data;
+
 
 ?>
