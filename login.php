@@ -12,7 +12,7 @@
     $dotenv = new Dotenv\Dotenv(__DIR__);
     $dotenv->load();
 
-    $permissions = ['email', 'user_likes']; // optional
+    $permissions = ['email']; // optional
     $loginUrl = $helper->getLoginUrl($_ENV['HOST'].'fb-callback.php', $permissions);
     echo '<a href="' . htmlspecialchars($loginUrl) . '">Log in with Facebook!</a>';
 
